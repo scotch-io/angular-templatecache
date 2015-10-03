@@ -5,11 +5,38 @@
 	<title>My Routing App</title>
 
 	<!-- CSS -->
-	
+	<!-- load up bootstrap and add a custom style -->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<style>
+		body { padding-top:50px; }
+	</style>
+
+	<!-- JS -->
+	<!-- load angular, ui-router, and our custom Angular code -->
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="js/app.js"></script>
 </head>
-<body ng-app="app" ng-controller="MainController as main">
+<body class="container" ng-app="app" ng-controller="MainController as main">
 
+	<!-- JUST A QUICK HEADER NAV -->
+	<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a ui-sref="home" class="navbar-brand">
+				<span class="glyphicon glyphicon-qrcode"></span> Home
+			</a>
+		</div>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a ui-sref="home">Home</a></li>
+			<li><a ui-sref="about">About</a></li>
+			<li><a ui-sref="contact">Contact</a></li>	
+		</ul>
+	</div>
+	</nav>
 
+	<!-- THE MAIN SECTION WHERE VIEWS GET INJECTED -->
+	<div ui-view></div>
 	
 </body>
 </html>
